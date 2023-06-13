@@ -4,9 +4,10 @@ import { TPlant } from "../App";
 
 type PlantProps = {
   plant: TPlant;
+  deleteHandler: () => void;
 };
 
-function Plant({ plant }: PlantProps): React.ReactElement {
+function Plant({ plant, deleteHandler }: PlantProps): React.ReactElement {
   const [price, setPrice] = useState(plant.price);
 
   return (
@@ -15,7 +16,7 @@ function Plant({ plant }: PlantProps): React.ReactElement {
       <p className="plantName">{plant.name}</p>
       <div className="priceContainer">
         <button
-          onClick={(event) => {
+          onClick={() => {
             setPrice((prevPrice) => prevPrice - 1);
           }}
         >
@@ -30,6 +31,9 @@ function Plant({ plant }: PlantProps): React.ReactElement {
           +
         </button>
       </div>
+      <button className="deleteButton" onClick={deleteHandler}>
+        Delete
+      </button>
     </div>
   );
 }

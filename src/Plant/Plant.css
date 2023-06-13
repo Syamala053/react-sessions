@@ -20,7 +20,15 @@
   display: flex;
   justify-content: space-evenly;
   margin: auto 100px;
-  margin-bottom: 30px;
   height: 25px;
   align-items: center;
+}
+
+.deleteButton {
+  margin-left: 235px;
+  background: #ba2a10;
+  border: 1px solid black;
+  border-radius: 3px;
+  color: white;
+  margin-bottom: 10px;
 }

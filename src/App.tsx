@@ -71,10 +71,18 @@ const plantsData: TPlant[] = [
 function App() {
   const [data, setData] = useState(plantsData);
 
+  const deletePlant = (id: number) => {
+    setData(data.filter((plant) => plant.id !== id));
+  };
+
   return (
     <div className="root">
       {data.map((plant) => (
-        <Plant plant={plant} key={plant.id} />
+        <Plant
+          plant={plant}
+          key={plant.id}
+          deleteHandler={() => deletePlant(plant.id)}
+        />
       ))}
     </div>
   );
