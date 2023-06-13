@@ -3,24 +3,3 @@
   flex-wrap: wrap;
   margin: 20px 100px;
 }
-
-.plantContainer {
-  border: 1px solid black;
-  border-radius: 8px;
-  width: 292px;
-  margin: 12px;
-}
-
-.plantImage {
-  width: 292px;
-  height: 370px;
-  border-radius: 8px;
-}
-
-.plantName {
-  margin-left: 10px;
-}
-
-.plantPrice {
-  margin-left: 10px;
-}

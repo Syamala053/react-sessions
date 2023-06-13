@@ -1,0 +1,26 @@
+.plantContainer {
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 292px;
+  margin: 12px;
+}
+
+.plantImage {
+  width: 292px;
+  height: 370px;
+  border-radius: 8px;
+}
+
+.plantName {
+  margin-left: 10px;
+  text-align: center;
+}
+
+.priceContainer {
+  display: flex;
+  justify-content: space-evenly;
+  margin: auto 100px;
+  margin-bottom: 30px;
+  height: 25px;
+  align-items: center;
+}
