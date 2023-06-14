@@ -7,6 +7,7 @@ export type TPlant = {
   name: string;
   image: string;
   price: number;
+  outOfStock: boolean;
 };
 
 const plantsData: TPlant[] = [
@@ -16,6 +17,7 @@ const plantsData: TPlant[] = [
     image:
       "https://cdn.shopify.com/s/files/1/0577/1971/7922/products/aglaonema-pink-anjamani-medium-growpot-greenkin.jpg?v=1665745797&width=1445",
     price: 250,
+    outOfStock: false,
   },
   {
     id: 2,
@@ -23,6 +25,7 @@ const plantsData: TPlant[] = [
     image:
       "https://cdn.shopify.com/s/files/1/0577/1971/7922/products/monstera-deliciosa-xlarge-cotton-grey-greenkin.jpg?v=1667067630",
     price: 500,
+    outOfStock: true,
   },
   {
     id: 3,
@@ -30,6 +33,7 @@ const plantsData: TPlant[] = [
     image:
       "https://cdn.shopify.com/s/files/1/0577/1971/7922/products/rubber-plant-burgundy-large-cotton-pink-greenkin.jpg?v=1668108333&width=900",
     price: 632,
+    outOfStock: false,
   },
   {
     id: 4,
@@ -37,6 +41,7 @@ const plantsData: TPlant[] = [
     image:
       "https://cdn.shopify.com/s/files/1/0577/1971/7922/products/jade-mini-plant-small-elementary-pink-greenkin.jpg?v=1667498553",
     price: 723,
+    outOfStock: false,
   },
   {
     id: 5,
@@ -44,6 +49,7 @@ const plantsData: TPlant[] = [
     image:
       "https://cdn.shopify.com/s/files/1/0577/1971/7922/products/aglaonema-red-lipstick-large-knitted-wine-greenkin.jpg?v=1665745881&width=1445",
     price: 892,
+    outOfStock: false,
   },
   {
     id: 6,
@@ -51,6 +57,7 @@ const plantsData: TPlant[] = [
     image:
       "https://cdn.shopify.com/s/files/1/0577/1971/7922/products/broken-heart-plant-large-cotton-yellow-greenkin.jpg?v=1673434111&width=1445",
     price: 878,
+    outOfStock: true,
   },
   {
     id: 7,
@@ -58,6 +65,7 @@ const plantsData: TPlant[] = [
     image:
       "https://cdn.shopify.com/s/files/1/0577/1971/7922/products/money-plant-goldking-medium-growpot-greenkin.jpg?v=1667498337&width=533",
     price: 628,
+    outOfStock: false,
   },
   {
     id: 8,
@@ -65,6 +73,7 @@ const plantsData: TPlant[] = [
     image:
       "https://cdn.shopify.com/s/files/1/0577/1971/7922/products/zz-green-medium-jute-white-greenkin.jpg?v=1674928536",
     price: 980,
+    outOfStock: false,
   },
 ];
 
@@ -82,6 +91,7 @@ function App() {
           plant={plant}
           key={plant.id}
           deleteHandler={() => deletePlant(plant.id)}
+          isOutofStock={plant.outOfStock}
         />
       ))}
     </div>
