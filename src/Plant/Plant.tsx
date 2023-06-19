@@ -6,12 +6,14 @@ type PlantProps = {
   plant: TPlant;
   isOutofStock: boolean;
   deleteHandler: () => void;
+  editHandler: () => void;
 };
 
 function Plant({
   plant,
   deleteHandler,
   isOutofStock,
+  editHandler,
 }: PlantProps): React.ReactElement {
   const [price, setPrice] = useState(plant.price);
 
@@ -41,6 +43,7 @@ function Plant({
           <button className="deleteButton" onClick={deleteHandler}>
             Delete
           </button>
+          <button onClick={editHandler}>Edit</button>
         </>
       )}
     </div>

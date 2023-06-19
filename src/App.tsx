@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import "./App.css";
 import Plant from "./Plant/Plant";
+import { plantReducer } from "./plantReducer";
 
 export type TPlant = {
   id: number;
@@ -78,23 +79,53 @@ const plantsData: TPlant[] = [
 ];
 
 function App() {
-  const [data, setData] = useState(plantsData);
+  const [plants, dispatch] = useReducer(plantReducer, plantsData);
 
-  const deletePlant = (id: number) => {
-    setData(data.filter((plant) => plant.id !== id));
-  };
+  function handleAddPlant() {
+    dispatch({
+      type: "add",
+      plant: {
+        id: 9,
+        name: "Aglaonema Pink Anjamani (Large)",
+        image:
+          "https://cdn.shopify.com/s/files/1/0577/1971/7922/products/aglaonema-pink-anjamani-medium-growpot-greenkin.jpg?v=1665745797&width=1445",
+        price: 890,
+        outOfStock: false,
+      },
+    });
+  }
+
+  function handleDeletePlant(id: number) {
+    dispatch({
+      type: "delete",
+      id: id,
+    });
+  }
+
+  function handleEditPlant(plant: TPlant) {
+    dispatch({
+      type: "edit",
+      plant: plant,
+    });
+  }
 
   return (
-    <div className="root">
-      {data.map((plant) => (
-        <Plant
-          plant={plant}
-          key={plant.id}
-          deleteHandler={() => deletePlant(plant.id)}
-          isOutofStock={plant.outOfStock}
-        />
-      ))}
-    </div>
+    <>
+      <button onClick={handleAddPlant}>Add Plant</button>
+      <div className="root">
+        {plants.map((plant) => (
+          <Plant
+            plant={plant}
+            key={plant.id}
+            deleteHandler={() => handleDeletePlant(plant.id)}
+            editHandler={() =>
+              handleEditPlant({ ...plant, name: plant.name + "edited" })
+            }
+            isOutofStock={plant.outOfStock}
+          />
+        ))}
+      </div>
+    </>
   );
 }
 
