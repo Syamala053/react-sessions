@@ -9,7 +9,9 @@ test("plant catalog supports the interactions described in the README", () => {
   const inStock = screen.getByText("Aglaonema Pink Anjamani").parentElement!;
   const outOfStock = screen.getByText("Monstera Deliciosa").parentElement!;
   /* eslint-enable testing-library/no-node-access */
+
   expect(within(inStock).getByRole("img")).toHaveAttribute("src");
+  expect(within(inStock).getByText("250")).toBeInTheDocument();
   expect(outOfStock).toHaveClass("disable");
   expect(within(outOfStock).queryByRole("button")).not.toBeInTheDocument();
 
@@ -28,5 +30,6 @@ test("plant catalog supports the interactions described in the README", () => {
   unmount();
   render(<App />);
   expect(screen.getByText("Aglaonema Pink Anjamani")).toBeInTheDocument();
+  expect(screen.getByText("250")).toBeInTheDocument();
   expect(screen.queryByText("Aglaonema Pink Anjamani (Large)")).not.toBeInTheDocument();
 });
