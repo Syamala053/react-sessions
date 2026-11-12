@@ -1,46 +1,32 @@
-# Getting Started with Create React App
+# React Sessions: plant catalog
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React Sessions is a small React and TypeScript plant catalog built with Create React App. It displays a hard-coded collection of plants with images, names, prices and stock status, and demonstrates managing a list with React's `useReducer` and per-card state with `useState`.
 
-## Available Scripts
+## What it does
 
-In the project directory, you can run:
+- Displays plant cards; out-of-stock plants appear disabled and have no controls.
+- Adds a predefined plant with **Add Plant**. The button adds the same plant each time rather than opening a form.
+- Lets you delete an in-stock plant or append `edited` to its name with **Edit**.
+- Adjusts the displayed price of an in-stock plant with **+** and **-**.
 
-### `npm start`
+The catalog and price changes live only in memory and reset when the page is reloaded. There is no backend or checkout. Plant images are loaded from external URLs and require network access.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting started
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Install Node.js and npm, then from the project directory run:
 
-### `npm test`
+```sh
+npm install
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open [http://localhost:3000](http://localhost:3000). The development server reloads when files change.
 
-### `npm run build`
+## Available scripts
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- `npm start` — run the development server.
+- `npm test` — run tests in interactive watch mode; use `CI=true npm test -- --watchAll=false` for a single run.
+- `npm run build` — create a production build in `build/`.
+- `npm run eject` — permanently expose the Create React App configuration; this cannot be undone.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+For more on the tooling, see the [Create React App documentation](https://create-react-app.dev/docs/getting-started/).
